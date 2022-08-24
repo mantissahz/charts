@@ -25,13 +25,13 @@ image:
   longhorn:
     engine:
       repository: longhornio/longhorn-engine
-      tag: v1.2.5-rc1
+      tag: v1.2.4
     manager:
       repository: longhornio/longhorn-manager
-      tag: v1.2.5-rc1
+      tag: v1.2.4
     ui:
       repository: longhornio/longhorn-ui
-      tag: v1.2.5-rc1
+      tag: v1.2.4
     instanceManager:
       repository: longhornio/longhorn-instance-manager
       tag: v1_20220303
@@ -105,6 +105,7 @@ defaultSettings:
   defaultReplicaCount: ~
   defaultLonghornStaticStorageClass: ~
   backupstorePollInterval: ~
+  failedBackupTTL: ~
   taintToleration: ~
   systemManagedComponentsNodeSelector: ~
   priorityClass: ~
