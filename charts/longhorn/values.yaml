@@ -25,25 +25,25 @@ image:
   longhorn:
     engine:
       repository: longhornio/longhorn-engine
-      tag: v1.4.0
+      tag: master-head
     manager:
-      repository: longhornio/longhorn-manager
-      tag: v1.4.0
+      repository: jamesluhz/lh-manager
+      tag: v0315master5131b02
     ui:
       repository: longhornio/longhorn-ui
-      tag: v1.4.0
+      tag: master-head
     instanceManager:
       repository: longhornio/longhorn-instance-manager
-      tag: v1.4.0
+      tag: master-head
     shareManager:
       repository: longhornio/longhorn-share-manager
-      tag: v1.4.0
+      tag: master-head
     backingImageManager:
       repository: longhornio/backing-image-manager
-      tag: v1.4.0
+      tag: master-head
     supportBundleKit:
       repository: longhornio/support-bundle-kit
-      tag: v0.0.17
+      tag: v0.0.19
   csi:
     attacher:
       repository: longhornio/csi-attacher
@@ -81,7 +81,6 @@ persistence:
   defaultMkfsParams: ""
   defaultClassReplicaCount: 3
   defaultDataLocality: disabled # best-effort otherwise
-  defaultReplicaAutoBalance: ignored # "disabled", "least-effort" or "best-effort" otherwise
   reclaimPolicy: Delete
   migratable: false
   recurringJobSelector:
@@ -183,6 +182,18 @@ longhornManager:
   ## and uncomment this example block
   #  label-key1: "label-value1"
   #  label-key2: "label-value2"
+  affinity: {}
+  ## If you want to set nodeAffinity for Longhorn Manager DaemonSet, delete the `{}` in the line above
+  ## and uncomment this example block
+  # nodeAffinity:
+  #   requiredDuringSchedulingIgnoredDuringExecution:
+  #     nodeSelectorTerms:
+  #       - matchExpressions:
+  #         - key: label-key1
+  #           operator: In
+  #           values:
+  #             - label-value1
+  #             - label-value2  
   serviceAnnotations: {}
   ## If you want to set annotations for the Longhorn Manager service, delete the `{}` in the line above
   ## and uncomment this example block
