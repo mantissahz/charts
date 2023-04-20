@@ -27,8 +27,8 @@ image:
       repository: longhornio/longhorn-engine
       tag: v1.4.0
     manager:
-      repository: longhornio/longhorn-manager
-      tag: v1.4.0
+      repository: jamesluhz/lh-manager
+      tag: v0419master4519b01
     ui:
       repository: longhornio/longhorn-ui
       tag: v1.4.0
